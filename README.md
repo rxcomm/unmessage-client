@@ -8,7 +8,7 @@ for [unMessage](https://github.com/AnemoneLabs/unmessage).
 To run the container, execute the [start.sh](util/start.sh) script. With no arguments,
 the container will be configured to use the command line, and with the optional "gui"
 argument, the container will be configured to use either the command line or gui.
-Usage is described in the
+unMessage usage is described in the
 [unMessage documentation](https://unmessage.readthedocs.io/en/latest/).
 
 ### Comand line interface
@@ -25,3 +25,11 @@ by executing ```unmessage-gui``` at the bash prompt. Enter your nickname in the 
 box of the Start Peer window and click ```Start```. After the first time you run
 unmessage, you can simply execute the command ```unmessage``` at the bash prompt
 to return to your previous configuration.
+
+### axotor
+
+It is also possible to run the
+[axotor](https://github.com/rxcomm/pyaxo/blob/master/examples/axotor.py)
+application from this container. To start axotor, execute the command
+```axotor [-s|-c]```. Further details on using axotor are provided in
+the python docstring linked above.

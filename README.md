@@ -5,6 +5,10 @@
 This repository contains the Dockerfiles to build a docker image
 for [unMessage](https://github.com/AnemoneLabs/unmessage).
 
+Clone the repository using the ```--recursive``` flag - e.g.:
+
+     git clone --recursive https://github.com/rxcomm/unmessage-client
+
 To run the container, execute the [start.sh](util/start.sh) script. With no arguments,
 the container will be configured to use the command line, and with the optional "gui"
 argument, the container will be configured to use either the command line or gui.
@@ -25,6 +29,25 @@ by executing ```unmessage-gui``` at the bash prompt. Enter your nickname in the 
 box of the Start Peer window and click ```Start```. After the first time you run
 unmessage, you can simply execute the command ```unmessage``` at the bash prompt
 to return to your previous configuration.
+
+### unMessage develop branch (includes audio chat)
+
+The develop branch of unMessage has experimental audio chat support. The
+docker image rxcomm/unmessage-client-audio has the develop branch of
+unMessage installed. Audio chats are started and stopped with the ```/untalk```
+command.
+
+In order to get this to work, you need to configure your host pulseaudio so
+that the docker container can access it. You do this by running the
+[dockerpulse.sh](util/dockerpulse.sh) script. This will authenticate the
+docker container so that it can use the host's pulseaudio. Then start
+the rxcomm/unmessage-client-audio container using the [audio.sh](util/audio.sh)
+script. The output of the dockerpulse.sh script gives you all of the
+required parameters for the audio.sh script.
+
+Once you've started the container with the audio.sh script, run unmessage
+as usual, and you will find the ```/untalk``` and ```/untalk-devices``` commands
+available.
 
 ### axotor
 

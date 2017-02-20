@@ -1,0 +1,3 @@
+[submodule "src/unmessage-client-audio/unmessage"]
+	path = src/unmessage-client-audio/unmessage
+	url = https://github.com/AnemoneLabs/unmessage
